@@ -1,0 +1,4 @@
+Name,Email,Mobile #,Other #,Custom ID,Lead Score,Household Premium,Policies,Active Policies,Lapsed Policies,Household Status,Adults,Script Type,Household Members,Address,Outcome,Notes
+Jane Q Sample,jane.sample@example.com,(555) 010-0101,(555) 010-0199,DEMO-20260115-0001,77,612.40,"0001234, 0001235",1,1,Active,2,Under-65 Review + Recommended,Jane Q Sample (42); John Sample (44),"123 Example St, Springfield, ZZ 00001",,
+Alex Tester,,(555) 010-0202,,DEMO-20260115-0002,64,744.00,0007788,1,0,Active,1,Senior Review,Alex Tester (63),"9 Placeholder Ave APT 2, Riverton, ZZ 00002",,
+Sam Demo,,(555) 010-0303,,DEMO-20260115-0003,55,298.80,0009001,1,0,Active,1,Under-65 Review,Sam Demo (29),"77 Fiction Rd, Lakeview, ZZ 00003",,

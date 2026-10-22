@@ -1,0 +1,12 @@
+{
+  "files": 1,
+  "policies": 4,
+  "households": 3,
+  "no_phone": 0,
+  "scripts": {
+    "Under-65 Review + Recommended": 1,
+    "Senior Review": 1,
+    "Under-65 Review": 1
+  },
+  "generated": "2026-10-21T22:35:48"
+}

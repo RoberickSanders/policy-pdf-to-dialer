@@ -1,0 +1,30 @@
+PRIOR COVERAGE SUMMARY                                   Life Insurance Agency (Sample)
+Lead ID: 000001                                          Printed: 2026-01-15
+JANE Q SAMPLE (Age: 42) Sex:F     123 EXAMPLE ST  LOCAL 99
+  Ph:(555) 010-0101   DOB:3/14/1983   SPRINGFIELD, ZZ 00001  0001234
+  Sec Ph:(555) 010-0199
+Stage: Active   Stat: INF
+Plan  WL10   Face 25000   ADB
+Annual 612.40
+Issue Date 2025-11-02
+Email: jane.sample@example.com
+JOHN SAMPLE (Age: 44) Sex:M       123 EXAMPLE ST
+  Ph:(555) 010-0101   DOB:7/2/1981    SPRINGFIELD, ZZ 00001  0001235
+Stage: Lapse   Stat: LPS
+Plan  TERM20  Face 50000
+Annual 388.00
+Issue Date 2019-04-20
+<<<PAGEBREAK>>>
+ALEX TESTER (Age: 63) Sex:M       9 PLACEHOLDER AVE APT 2
+  Ph:(555) 010-0202   DOB:11/30/1962  RIVERTON, ZZ 00002  0007788
+Stage: Active   Stat: INF
+Plan  FE15   Face 10000
+Annual 744.00
+Issue Date 2016-08-01
+SAM DEMO (Age: 29) Sex:F          77 FICTION RD
+  Ph:(000) 000-0000   DOB:5/5/1997    LAKEVIEW, ZZ 00003  0009001
+  Sec Ph:(555) 010-0303
+Stage: Active   Stat: INF
+Plan  WL10   Face 15000   AD&D
+Annual 298.80
+Issue Date 2021-02-11
