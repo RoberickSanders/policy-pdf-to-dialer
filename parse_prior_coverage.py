@@ -180,7 +180,17 @@ def build_rows(policies: list[dict], today: date, prefix: str) -> list[dict]:
     return rows
 
 
+_PHONEISH = re.compile(r"^[+-]?[\d\s().-]+$")
+
+def safe_cell(v):
+    """Stop spreadsheet formula injection: prefix text starting with = + - @ (tab/CR too) with '. Plain numbers/phones are left alone."""
+    if isinstance(v, str) and v[:1] in ("=", "+", "-", "@", "\t", "\r") and not _PHONEISH.match(v):
+        return "'" + v
+    return v
+
+
 def write(rows: list[dict], out: Path):
+    rows = [{k: safe_cell(v) for k, v in r.items()} for r in rows]
     out.mkdir(parents=True, exist_ok=True)
     with open(out / "dialer.csv", "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=COLUMNS); w.writeheader(); w.writerows(rows)
