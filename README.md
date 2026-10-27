@@ -2,6 +2,24 @@
 
 **Turn a stack of insurance "prior coverage" PDFs into a ranked, household-level dialer CSV in seconds instead of an hour of copy-paste.**
 
+## How it works
+
+```mermaid
+flowchart TD
+  A[Start with a folder of policy PDFs or text exports] --> B[Read each file and turn PDFs into text]
+  B --> C[Split the text into one block per person]
+  C --> D[Read name, age, phones, address, policy, premium, and dates]
+  D --> E{Required field missing?}
+  E -->|Yes| F[Stop and name the file that failed]
+  E -->|No| G[Drop dummy phones such as 000-0000]
+  G --> H[Group people who share a phone or the same street and ZIP]
+  H --> I[Pick the main contact, best phone, lead score, and call script]
+  I --> J[Sort by score and block spreadsheet formulas in text cells]
+  J --> K[Write the dialer spreadsheet and a short run summary]
+```
+
+Nothing is filled in. If a name, status, premium, address, or policy number cannot be read, the run stops instead of guessing.
+
 ## The problem
 A life insurance agency hands agents a daily book of existing-policyholder leads as PDFs: one summary per lead, often several policies per household, wrapped across pages, with glued-on source tags, dummy phone numbers, and inconsistent layouts. Agents were retyping these into the dialer by hand: slow, error-prone, and nobody picked the right call script consistently.
 
@@ -13,18 +31,6 @@ A life insurance agency hands agents a daily book of existing-policyholder leads
    - Picks the primary contact and best phone, computes a lead score and household premium.
    - Chooses the **call script** by explicit rules (accidental rider + age, recent issue within 18 months, age band).
    - Writes `dialer.csv` (+ `dialer.xlsx`) sorted by score, plus `run-summary.json`.
-
-## Architecture
-```mermaid
-flowchart LR
-  D[(PDF folder)]
-  D --> T[pdftotext -layout]
-  T --> B[Block parser<br/>STOP on anything unparseable]
-  B --> U[Household merge<br/>union-find on phone / address]
-  U --> S[Score + script rules]
-  S --> C[dialer.csv / .xlsx]
-  C --> DL[Power dialer import]
-```
 
 ## Run it
 ```bash
